@@ -31,6 +31,7 @@ returned.
 ```js
 proxyaddr(req, function (addr) { return addr === '127.0.0.1' })
 proxyaddr(req, function (addr, i) { return i < 1 })
+proxyaddr(req, function (addr, i, req) { return verifySignedHeader(req.headers['x-signed-header']) })
 ```
 
 The `trust` arugment may also be a single IP address string or an

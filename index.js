@@ -66,7 +66,7 @@ function alladdrs (req, trust) {
   }
 
   for (var i = 0; i < addrs.length - 1; i++) {
-    if (trust(addrs[i], i)) continue
+    if (trust(addrs[i], i, req)) continue
 
     addrs.length = i + 1
   }

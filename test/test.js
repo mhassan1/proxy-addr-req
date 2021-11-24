@@ -95,19 +95,19 @@ describe('proxyaddr(req, trust)', function () {
         assert.throws(proxyaddr.bind(null, req, '::ffff:a00:2/255.255.255.0'), /invalid range on address/)
       })
 
-      it('should be invoked as trust(addr, i)', function () {
+      it('should be invoked as trust(addr, i, req)', function () {
         var log = []
         var req = createReq('127.0.0.1', {
           'x-forwarded-for': '192.168.0.1, 10.0.0.1'
         })
 
-        proxyaddr(req, function (addr, i) {
+        proxyaddr(req, function (addr, i, req) {
           return log.push(Array.prototype.slice.call(arguments))
         })
 
         strictDeepEqual(log, [
-          ['127.0.0.1', 0],
-          ['10.0.0.1', 1]
+          ['127.0.0.1', 0, req],
+          ['10.0.0.1', 1, req]
         ])
       })
     })
@@ -356,14 +356,14 @@ describe('proxyaddr(req, trust)', function () {
         'x-forwarded-for': 'myrouter, 127.0.0.1, proxy'
       })
 
-      proxyaddr(req, function (addr, i) {
+      proxyaddr(req, function (addr, i, req) {
         return log.push(Array.prototype.slice.call(arguments))
       })
 
       strictDeepEqual(log, [
-        ['127.0.0.1', 0],
-        ['proxy', 1],
-        ['127.0.0.1', 2]
+        ['127.0.0.1', 0, req],
+        ['proxy', 1, req],
+        ['127.0.0.1', 2, req]
       ])
     })
   })
