@@ -1,12 +1,8 @@
-# proxy-addr
-
-[![NPM Version][npm-version-image]][npm-url]
-[![NPM Downloads][npm-downloads-image]][npm-url]
-[![Node.js Version][node-image]][node-url]
-[![Build Status][ci-image]][ci-url]
-[![Test Coverage][coveralls-image]][coveralls-url]
+# proxy-addr-req
 
 Determine address of proxied request
+
+This is a fork of https://github.com/jshttp/proxy-addr that passes `req` to trust functions.
 
 ## Install
 
@@ -15,13 +11,13 @@ This is a [Node.js](https://nodejs.org/en/) module available through the
 [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
 
 ```sh
-$ npm install proxy-addr
+$ npm install proxy-addr-req
 ```
 
 ## API
 
 ```js
-var proxyaddr = require('proxy-addr')
+var proxyaddr = require('proxy-addr-req')
 ```
 
 ### proxyaddr(req, trust)
@@ -127,13 +123,3 @@ $ npm run-script bench
 ## License
 
 [MIT](LICENSE)
-
-[ci-image]: https://badgen.net/github/checks/jshttp/proxy-addr/master?label=ci
-[ci-url]: https://github.com/jshttp/proxy-addr/actions?query=workflow%3Aci
-[coveralls-image]: https://badgen.net/coveralls/c/github/jshttp/proxy-addr/master
-[coveralls-url]: https://coveralls.io/r/jshttp/proxy-addr?branch=master
-[node-image]: https://badgen.net/npm/node/proxy-addr
-[node-url]: https://nodejs.org/en/download
-[npm-downloads-image]: https://badgen.net/npm/dm/proxy-addr
-[npm-url]: https://npmjs.org/package/proxy-addr
-[npm-version-image]: https://badgen.net/npm/v/proxy-addr

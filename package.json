@@ -1,15 +1,15 @@
 {
-  "name": "proxy-addr",
+  "name": "proxy-addr-req",
   "description": "Determine address of proxied request",
   "version": "2.0.7",
-  "author": "Douglas Christopher Wilson <doug@somethingdoug.com>",
+  "author": "mhassan1",
   "license": "MIT",
   "keywords": [
     "ip",
     "proxy",
     "x-forwarded-for"
   ],
-  "repository": "jshttp/proxy-addr",
+  "repository": "mhassan1/proxy-addr-req",
   "dependencies": {
     "forwarded": "0.2.0",
     "ipaddr.js": "1.9.1"

@@ -1,6 +1,6 @@
 /*!
- * proxy-addr
- * Copyright(c) 2014-2016 Douglas Christopher Wilson
+ * proxy-addr-req
+ * Copyright(c) 2021 Marc Hassan
  * MIT Licensed
  */
 
